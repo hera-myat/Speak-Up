@@ -18,7 +18,7 @@ export default function Map() {
 
   return (
     <div className="map-container">
-      <img src="/map_darkmode.webp" alt="Map" className="map-image" />
+      <img src="/map-darkmode.webp" alt="Map" className="map-image" />
 
       {pins.map(pin => (
         <Pin key={pin.id} {...pin} />
