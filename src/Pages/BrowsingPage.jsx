@@ -8,18 +8,26 @@ export default function BrowsingPage() {
   const [context, setContext] = useState("");
 
   const trendingMovies = [
-    "/trending-movies/black-panther.jpeg",
-    "/trending-movies/jaws.jpeg",
-    "/trending-movies/me-before-you.jpeg",
-    "/trending-movies/the-notebook.jpeg",
+    { src: "/trending-movies/black-panther.jpeg", genre: "action" },
+    { src: "/trending-movies/jaws.jpeg", genre: "horror" },
+    { src: "/trending-movies/me-before-you.jpeg", genre: "romance" },
+    { src: "/trending-movies/the-notebook.jpeg", genre: "romance" },
   ];
 
   const trendingShows = [
-    "/trending-shows/bridgerton.jpeg",
-    "/trending-shows/the-office.jpg",
-    "/trending-shows/you.jpeg",
-    "/trending-shows/stranger-things.jpeg",
+    { src: "/trending-shows/bridgerton.jpeg", genre: "romance" },
+    { src: "/trending-shows/the-office.jpg", genre: "comedy" },
+    { src: "/trending-shows/you.jpeg", genre: "thriller" },
+    { src: "/trending-shows/stranger-things.jpeg", genre: "sci-fi" },
   ];
+
+  const filteredMovies = trendingMovies.filter((movie) => {
+  return genre === "" || movie.genre === genre;
+  });
+
+  const filteredShows = trendingShows.filter((show) => {
+    return genre === "" || show.genre === genre;
+  });
 
   return (
     <div className="browse-container">
@@ -39,6 +47,9 @@ export default function BrowsingPage() {
       <div className="filter-bar">
         <select value={genre} onChange={(e) => setGenre(e.target.value)}>
           <option value="">Genre</option>
+          <option value="action">Action</option>
+          <option value="thriller">Thriller</option>
+          <option value="sci-fi">Sci-Fi</option>
           <option value="romance">Romance</option>
           <option value="horror">Horror</option>
           <option value="comedy">Comedy</option>
@@ -62,10 +73,10 @@ export default function BrowsingPage() {
       <section className="section">
         <h2>Trending Movies</h2>
         <div className="grid">
-          {trendingMovies.map((movie, index) => (
+          {filteredMovies.map((movie, index) => (
             <div key={index} className="card">
               <img
-                src={movie}
+                src={movie.src}
                 alt={`movie-${index}`}
                 className="poster"
               />
@@ -77,10 +88,10 @@ export default function BrowsingPage() {
       <section className="section">
         <h2>Trending Shows</h2>
         <div className="grid">
-          {trendingShows.map((show, index) => (
+          {filteredShows.map((show, index) => (
             <div key={index} className="card">
               <img
-                src={show}
+                src={show.src}
                 alt={`show-${index}`}
                 className="poster"
               />
