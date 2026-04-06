@@ -134,3 +134,69 @@ html, body, #root {
 h2 {
   color: white;
 }
+
+.details-container {
+  background-color: rgb(28, 28, 29);
+  min-height: 100vh;
+  color: white;
+  padding: 40px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.details-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.details-video img {
+  width: 20%;
+  max-width: 800px;
+  border-radius: 14px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.details-learning {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.slang-box {
+  background: #424242;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.slang-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.timestamp {
+  background: #ff4d4d;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.context-box {
+  background: #424242;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.context-box ul {
+  padding-left: 18px;
+}
