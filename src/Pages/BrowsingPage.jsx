@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../index.css";
 
 export default function BrowsingPage() {
@@ -6,6 +7,7 @@ export default function BrowsingPage() {
   const [genre, setGenre] = useState("");
   const [level, setLevel] = useState("");
   const [context, setContext] = useState("");
+  const navigate = useNavigate();
 
   const trendingMovies = [
     { src: "/trending-movies/black-panther.jpeg", genre: "action" },
@@ -74,7 +76,7 @@ export default function BrowsingPage() {
         <h2>Trending Movies</h2>
         <div className="grid">
           {filteredMovies.map((movie, index) => (
-            <div key={index} className="card">
+            <div key={index} className="card" onClick={() => navigate(`/details/${index}`)}>
               <img
                 src={movie.src}
                 alt={`movie-${index}`}

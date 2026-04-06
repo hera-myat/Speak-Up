@@ -103,6 +103,7 @@ html, body, #root {
 
 .section h2 {
   margin-bottom: 10px;
+  color: white;
 }
 
 .grid {
@@ -128,4 +129,8 @@ html, body, #root {
 
 .card:hover {
   transform: scale(1.05);
+}
+
+h2 {
+  color: white;
 }
