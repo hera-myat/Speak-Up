@@ -51,7 +51,7 @@ export default function DetailsPage() {
       title: "Me Before You",
       src: "/trending-movies/me-before-you.jpeg",
       genre: "romance",
-      slang: ["Slang 1", "Slang 2", "Slang 3"],
+      slang: ["Slang 1", "Slang 2 🔥", "Slang 3"],
   
       context: {
         description:
@@ -141,12 +141,6 @@ export default function DetailsPage() {
 
       </div>
     
-    
-      <h2>{movie.title}</h2>
-      <p>Genre: {movie.genre}</p>
-
-      <h2>{movie.title}</h2>
-      <p>Genre: {movie.genre}</p>
     </div>
   );
 }
