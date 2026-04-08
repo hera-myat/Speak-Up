@@ -2,6 +2,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 
+import blackPanther from "../assets/trending-movies/black-panther.jpeg";
+import jaws from "../assets/trending-movies/jaws.jpeg";
+import meBeforeYou from "../assets/trending-movies/me-before-you.jpeg";
+import theNotebook from "../assets/trending-movies/the-notebook.jpeg";
+
+import bridgerton from "../assets/trending-shows/bridgerton.jpeg";
+import theOffice from "../assets/trending-shows/the-office.jpg";
+import you from "../assets/trending-shows/you.jpeg";
+import strangerThings from "../assets/trending-shows/stranger-things.jpeg";
+
 export default function BrowsingPage() {
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
@@ -10,21 +20,21 @@ export default function BrowsingPage() {
   const navigate = useNavigate();
 
   const trendingMovies = [
-    { src: "/trending-movies/black-panther.jpeg", genre: "action" },
-    { src: "/trending-movies/jaws.jpeg", genre: "horror" },
-    { src: "/trending-movies/me-before-you.jpeg", genre: "romance" },
-    { src: "/trending-movies/the-notebook.jpeg", genre: "romance" },
+    { src: blackPanther, genre: "action" },
+    { src: jaws, genre: "horror" },
+    { src: meBeforeYou, genre: "romance" },
+    { src: theNotebook, genre: "romance" },
   ];
 
   const trendingShows = [
-    { src: "/trending-shows/bridgerton.jpeg", genre: "romance" },
-    { src: "/trending-shows/the-office.jpg", genre: "comedy" },
-    { src: "/trending-shows/you.jpeg", genre: "thriller" },
-    { src: "/trending-shows/stranger-things.jpeg", genre: "sci-fi" },
+    { src: bridgerton, genre: "romance" },
+    { src: theOffice, genre: "comedy" },
+    { src: you, genre: "thriller" },
+    { src: strangerThings, genre: "sci-fi" },
   ];
 
   const filteredMovies = trendingMovies.filter((movie) => {
-  return genre === "" || movie.genre === genre;
+    return genre === "" || movie.genre === genre;
   });
 
   const filteredShows = trendingShows.filter((show) => {
@@ -76,7 +86,11 @@ export default function BrowsingPage() {
         <h2>Trending Movies</h2>
         <div className="grid">
           {filteredMovies.map((movie, index) => (
-            <div key={index} className="card" onClick={() => navigate(`/details/${index}`)}>
+            <div
+              key={index}
+              className="card"
+              onClick={() => navigate(`/details/${index}`)}
+            >
               <img
                 src={movie.src}
                 alt={`movie-${index}`}

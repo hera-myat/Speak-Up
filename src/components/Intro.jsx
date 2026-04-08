@@ -1,7 +1,7 @@
 import Pin from "./pin";
+import mapDarkmode from "../assets/map-darkmode.webp";
 
-
-export default function Map() {
+export default function Intro() {
   const pins = [
     { id: 1, x: 20, y: 30, label: "US/ENG" },
     { id: 2, x: 15, y: 40, label: "MX/ESP" },
@@ -12,15 +12,13 @@ export default function Map() {
     { id: 7, x: 28, y: 77, label: "AR/ESP" },
     { id: 8, x: 44, y: 30, label: "ES/ESP" },
     { id: 9, x: 95, y: 82, label: "NZ/ENG" },
-
-
   ];
 
   return (
-    <div className="map-container">
-      <img src="/map-darkmode.webp" alt="Map" className="map-image" />
+    <div className="map-container" style={{ position: "relative" }}>
+      <img src={mapDarkmode} alt="Map" className="map-image" style={{ width: "100%" }} />
 
-      {pins.map(pin => (
+      {pins.map((pin) => (
         <Pin key={pin.id} {...pin} />
       ))}
     </div>

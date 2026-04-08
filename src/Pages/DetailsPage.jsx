@@ -1,6 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "../index.css";
 
+// 🎬 Movie images
+import blackPanther from "../assets/trending-movies/black-panther.jpeg";
+import jaws from "../assets/trending-movies/jaws.jpeg";
+import meBeforeYou from "../assets/trending-movies/me-before-you.jpeg";
+import theNotebook from "../assets/trending-movies/the-notebook.jpeg";
+
 export default function DetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -8,13 +14,12 @@ export default function DetailsPage() {
   const trendingMovies = [
     {
       title: "Black Panther",
-      src: "/trending-movies/black-panther.jpeg",
+      src: blackPanther,
       genre: "action",
       slang: [
         '"What are those??" : Used as a humorous reaction to modern clothing.',
         '"Wassup" : A casual greeting showing confidence and confrontation. 🔥'
       ],
-  
       context: {
         description:
           "Common informal American expressions used among friends",
@@ -27,13 +32,12 @@ export default function DetailsPage() {
         ]
       }
     },
-  
+
     {
       title: "Jaws",
-      src: "/trending-movies/jaws.jpeg",
+      src: jaws,
       genre: "horror",
       slang: ["Slang 1 🔥", "Slang 2", "Slang 3"],
-  
       context: {
         description:
           "Expressions used in tense or urgent situations.",
@@ -46,13 +50,12 @@ export default function DetailsPage() {
         ]
       }
     },
-  
+
     {
       title: "Me Before You",
-      src: "/trending-movies/me-before-you.jpeg",
+      src: meBeforeYou,
       genre: "romance",
       slang: ["Slang 1", "Slang 2 🔥", "Slang 3"],
-  
       context: {
         description:
           "Romantic and emotionally expressive conversations.",
@@ -65,13 +68,12 @@ export default function DetailsPage() {
         ]
       }
     },
-  
+
     {
       title: "The Notebook",
-      src: "/trending-movies/the-notebook.jpeg",
+      src: theNotebook,
       genre: "romance",
       slang: ["Slang 1", "Slang 2 🔥", "Slang 3"],
-  
       context: {
         description:
           "Deep emotional dialogue focused on love and relationships.",
@@ -101,12 +103,12 @@ export default function DetailsPage() {
       <h1 className="details-title">{movie.title}</h1>
 
       <div className="details-video">
-      <img src={movie.src} alt={movie.title} />
+        <img src={movie.src} alt={movie.title} />
       </div>
 
       <div className="details-learning">
 
-{/* Slang List */}
+        {/* Slang List */}
         <div className="slang-box">
           <h3>Slang List</h3>
 
@@ -118,9 +120,7 @@ export default function DetailsPage() {
           ))}
         </div>
 
-        
-
-{/* Context */}
+        {/* Context */}
         <div className="context-box">
           <h3>Context</h3>
           <p>{movie.context.description}</p>
@@ -140,7 +140,6 @@ export default function DetailsPage() {
         </div>
 
       </div>
-    
     </div>
   );
 }
