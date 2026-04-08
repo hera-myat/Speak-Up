@@ -1,5 +1,5 @@
 import Pin from "./pin";
-import mapDarkmode from "../assets/map-darkmode.webp"; // ✅ import at top
+import mapDarkmode from "../assets/map-darkmode.webp";
 
 export default function Intro() {
   const pins = [

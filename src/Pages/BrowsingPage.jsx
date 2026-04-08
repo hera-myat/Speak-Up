@@ -2,13 +2,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
 
-// 🎬 Movie images
 import blackPanther from "../assets/trending-movies/black-panther.jpeg";
 import jaws from "../assets/trending-movies/jaws.jpeg";
 import meBeforeYou from "../assets/trending-movies/me-before-you.jpeg";
 import theNotebook from "../assets/trending-movies/the-notebook.jpeg";
 
-// 📺 Show images
 import bridgerton from "../assets/trending-shows/bridgerton.jpeg";
 import theOffice from "../assets/trending-shows/the-office.jpg";
 import you from "../assets/trending-shows/you.jpeg";
