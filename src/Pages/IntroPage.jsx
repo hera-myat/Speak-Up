@@ -1,5 +1,3 @@
-
-
 import Intro from "../components/Intro";
 import "../index.css";
 
