@@ -6,7 +6,7 @@ import "./index.css";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Speak-Up/">
       <Routes>
         <Route path="/" element={<IntroPage />} />
         <Route path="/pin/US/ENG" element={<BrowsingPage />} />
