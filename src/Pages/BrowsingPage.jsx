@@ -113,7 +113,6 @@ export default function BrowsingPage() {
   return (
     <div className="browse-container">
 
-      {/* TOP BAR */}
       <div className="top-bar">
         <div className="location-pill">
           <span className="flag">🇺🇸</span>
@@ -133,7 +132,6 @@ export default function BrowsingPage() {
         </div>
       </div>
 
-      {/* FILTER BAR */}
       <div className="filter-bar">
         <select value={genre} onChange={(e) => setGenre(e.target.value)}>
           <option value="">Genre</option>
@@ -160,7 +158,6 @@ export default function BrowsingPage() {
         </select>
       </div>
 
-      {/* TRENDING MOVIES */}
       <section className="section">
         <h2>Trending Movies</h2>
         <div className="scroll-row">
@@ -176,7 +173,6 @@ export default function BrowsingPage() {
         </div>
       </section>
 
-      {/* TRENDING SHOWS */}
       <section className="section">
         <h2>Trending Shows</h2>
         <div className="scroll-row">
@@ -188,7 +184,6 @@ export default function BrowsingPage() {
         </div>
       </section>
 
-      {/* MUST WATCH */}
       <section className="section">
         <h2>Must Watch</h2>
         <div className="scroll-row">
@@ -200,7 +195,6 @@ export default function BrowsingPage() {
         </div>
       </section>
 
-      {/* BEGINNER'S CHOICES */}
       <section className="section">
         <h2>Beginner's Choices</h2>
         <div className="scroll-row">
