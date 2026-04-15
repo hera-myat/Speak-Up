@@ -38,6 +38,20 @@ body {
   margin-bottom: 10px;
 }
 
+.home-button {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 4px;
+  transition: 0.3s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.2);
+}
+
 .location-label {
   font-size: 18px;
 }
@@ -325,4 +339,21 @@ body {
 
 .pin:hover .pin-label {
   opacity: 1;
+}
+
+.no-matches {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.no-matches h3 {
+  font-size: 24px;
+  color: #999;
+  margin: 0 0 10px 0;
+}
+
+.no-matches p {
+  color: #999;
+  margin: 0;
+  font-size: 16px;
 }
