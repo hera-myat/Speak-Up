@@ -120,14 +120,6 @@ export default function BrowsingPage() {
           <span className="text">United States</span>
           <span className="dot">•</span>
           <span className="text">English</span>
-          <span className="dot">•</span>
-          <button 
-            className="home-button"
-            onClick={() => navigate("/")}
-            title="Back to Home"
-          >
-            🏠
-          </button>
         </div>
 
         <div className="search-container">
@@ -170,7 +162,7 @@ export default function BrowsingPage() {
       {!hasResults && (
         <div className="no-matches">
           <h3>No matches found</h3>
-          <p>Try adjusting your filters or reviewing your search term</p>
+          <p>Try adjusting your filters or reviewing your search terms</p>
         </div>
       )}
 
