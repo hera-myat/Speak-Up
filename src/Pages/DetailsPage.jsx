@@ -172,6 +172,11 @@ export default function DetailsPage() {
         <div className="col-md-8">
           <h1 className="details-title">{movie.title}</h1>
           <span className="genre-badge">{movie.genre}</span>
+          <div>
+            <button className="watch-movie-btn" onClick={() => navigate(`/video-player/${id}`)}>
+              ▶ Play Movie
+            </button>
+          </div>
         </div>
       </div>
       <div className="row">
