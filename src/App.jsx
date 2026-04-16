@@ -3,6 +3,7 @@ import IntroPage from "./Pages/IntroPage";
 import BrowsingPage from "./Pages/BrowsingPage"; 
 import DetailsPage from "./Pages/DetailsPage";
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (

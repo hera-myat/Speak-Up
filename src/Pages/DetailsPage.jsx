@@ -1,4 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../index.css";
 
 import blackPanther from "../assets/trending-movies/black-panther.jpeg";
@@ -9,125 +11,248 @@ import theNotebook from "../assets/trending-movies/the-notebook.jpeg";
 export default function DetailsPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-
+  const [selectedSlang, setSelectedSlang] = useState(null);
+  const [completed, setCompleted] = useState([]);
   const trendingMovies = [
     {
-      title: "Black Panther",
+      title: "Learn Commonly Used Slang",
       src: blackPanther,
-      genre: "action",
+      genre: "Friendly Conversation",
       slang: [
-        '"What are those??" — humorous reaction to fashion',
-        '"Wassup" — casual confident greeting 🔥'
-      ],
-      context: {
-        description: "Informal American expressions among friends",
-        formality: "Informal",
-        tone: "Confident",
-        responses: ["Hey!", "What’s good?", "Yo 👋"]
-      }
+        {
+          phrase: "You good? 🔥",
+          meaning: "Are you okay / everything alright?",
+          tone: "Friendly",
+          formality: "Informal",
+          situation: "Checking in on a friend",
+          responses: ["Yeah I’m good", "All good", "I’m chilling"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "You’re hilarious",
+          meaning: "You’re really funny",
+          tone: "Humorous",
+          formality: "Informal",
+          situation: "Reacting to a joke",
+          responses: ["I know 😂", "Thanks!", "I try"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "I can’t with you",
+          meaning: "You’re too funny / I’m overwhelmed laughing",
+          tone: "Playful",
+          formality: "Slang",
+          situation: "Laughing with friends",
+          responses: ["😂 same", "You started it", "Stoppp"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "No way! 🔥",
+          meaning: "Expression of surprise",
+          tone: "Excited",
+          formality: "Informal",
+          situation: "Reacting to surprising news",
+          responses: ["Yes way!", "I swear!", "Crazy right?"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "That’s wild",
+          meaning: "That’s crazy / unbelievable",
+          tone: "Casual",
+          formality: "Informal",
+          situation: "Reacting to stories or events",
+          responses: ["I know!", "Right?!", "Insane"],
+          timestamp: "0:00"
+        }
+      ]
     },
     {
-      title: "Jaws",
+      title: "Learn Commonly Used Phrases",
       src: jaws,
-      genre: "horror",
-      slang: ["Tension phrases", "Warning expressions", "Urgent speech 🔥"],
-      context: {
-        description: "Used in tense or dangerous situations",
-        formality: "Neutral",
-        tone: "Serious",
-        responses: ["Run!", "Be careful", "It’s coming!"]
-      }
+      genre: "Meeting New People",
+      slang: [
+        {
+          phrase: "Nice to meet you 🔥",
+          meaning: "Polite greeting when meeting someone new",
+          tone: "Polite",
+          formality: "Formal",
+          situation: "First introduction",
+          responses: ["Nice to meet you too", "Likewise", "Good to meet you"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "Where are you from?",
+          meaning: "Asking about someone’s origin",
+          tone: "Curious",
+          formality: "Neutral",
+          situation: "Getting to know someone",
+          responses: ["I’m from…", "I live in…", "Originally…"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "What do you do?",
+          meaning: "Asking about job or studies",
+          tone: "Friendly",
+          formality: "Neutral",
+          situation: "Conversation starter",
+          responses: ["I study…", "I work as…", "I’m in school"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "That’s cool",
+          meaning: "Polite reaction showing interest",
+          tone: "Friendly",
+          formality: "Informal",
+          situation: "Responding in conversation",
+          responses: ["Yeah!", "I like it", "Same here"],
+          timestamp: "0:00"
+        },
+        {
+          phrase: "We should hang out sometime 🔥",
+          meaning: "Suggesting meeting again",
+          tone: "Friendly",
+          formality: "Informal",
+          situation: "Ending a good conversation",
+          responses: ["Sure!", "Definitely", "Sounds good"],
+          timestamp: "0:00"
+        }
+      ]
     },
     {
       title: "Me Before You",
       src: meBeforeYou,
-      genre: "romance",
-      slang: ["Soft speech", "Emotional phrases 🔥", "Romantic tone"],
-      context: {
-        description: "Romantic emotional conversations",
+      genre: "Romance",
+      slang: Array(5).fill({
+        phrase: "Slang",
+        meaning: "Meaning not available yet",
+        tone: "Neutral",
         formality: "Informal",
-        tone: "Emotional",
-        responses: ["I miss you", "Stay with me", "I understand"]
-      }
+        situation: "Not Available",
+        responses: ["Response 1", "Response 2"],
+        timestamp: "0:00"
+      })
     },
     {
       title: "The Notebook",
       src: theNotebook,
-      genre: "romance",
-      slang: ["Love quotes", "Deep emotional lines 🔥", "Affectionate speech"],
-      context: {
-        description: "Deep romantic communication",
+      genre: "Romance",
+      slang: Array(5).fill({
+        phrase: "Slang",
+        meaning: "Meaning not available yet",
+        tone: "Neutral",
         formality: "Informal",
-        tone: "Passionate",
-        responses: ["I love you", "Forever", "Don’t leave"]
-      }
+        situation: "Not available",
+        responses: ["Response 1", "Response 2"],
+        timestamp: "0:00"
+      })
     }
   ];
 
-  const movie = trendingMovies[id];
-
+  const movie = trendingMovies[Number(id)];
   if (!movie) {
     return <div className="details-container">Movie not found</div>;
   }
-
   return (
-    <div className="details-container">
-
-      <button className="back-btn" onClick={() => navigate(-1)}>
+    <div className="details-container container mt-4">
+      <button
+        className="btn btn-outline-light mb-3"
+        onClick={() => navigate(-1)}
+      >
         ← Back
       </button>
 
-      <div className="details-hero">
-
-        <div className="details-poster">
-          <img src={movie.src} alt={movie.title} />
+      <div className="row align-items-center mb-4">
+        <div className="col-md-4 text-center">
+          <img
+            src={movie.src}
+            alt={movie.title}
+            className="details-poster"
+          />
         </div>
-
-        <div className="details-info">
+        <div className="col-md-8">
           <h1 className="details-title">{movie.title}</h1>
-          <p className="details-sub">{movie.context.description}</p>
-
-          <div className="details-badges">
-            <span>{movie.genre}</span>
-            <span>{movie.context.formality}</span>
-            <span>{movie.context.tone}</span>
-          </div>
+          <span className="genre-badge">{movie.genre}</span>
         </div>
       </div>
+      <div className="row">
 
-      <div className="details-grid">
+        <div className="col-md-6 mb-3">
+          <div className="speakup-card">
 
-        <div className="glass-card">
-          <h3>Slang List</h3>
-          {movie.slang.map((phrase, index) => (
-            <div key={index} className="slang-item">
-              <span>{phrase}</span>
-              <button className="play-btn">▶</button>
-            </div>
-          ))}
+            <div className="speakup-label">SLANG BREAKDOWN</div>
+            <div className="mb-2">
+          <div className="hint-text">
+            Progress: {completed.length} / {movie.slang.length}
+          </div>
+
+          <div className="progress">
+            <div
+              className="progress-bar"
+              role="progressbar"
+              style={{
+                width: `${(completed.length / movie.slang.length) * 100}%`,
+                backgroundColor: "#4fa5d8"
+              }}
+            />
+          </div>
         </div>
-
-        <div className="glass-card">
-          <h3>Context</h3>
-
-          <p>{movie.context.description}</p>
-
-          <div className="context-block">
-            <strong>Formality:</strong> {movie.context.formality}
-          </div>
-
-          <div className="context-block">
-            <strong>Tone:</strong> {movie.context.tone}
-          </div>
-
-          <h4>Suggested Responses</h4>
-          <ul>
-            {movie.context.responses.map((r, i) => (
-              <li key={i}>{r}</li>
+            {movie.slang.map((item, index) => (
+              <div
+                key={index}
+                className={`slang-item ${
+                  selectedSlang?.phrase === item.phrase ? "active" : ""
+                }`}
+              >
+                <span>{item.phrase}</span>
+                <button
+                  className="speakup-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedSlang(item);
+                  
+                    if (!completed.includes(item.phrase)) {
+                      setCompleted([...completed, item.phrase]);
+                    }
+                  }}
+                >
+                  ▶
+                </button>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
+        <div className="col-md-6 mb-3">
+          <div className="speakup-card">
+            <div className="speakup-label">CONTEXT</div>
+            {!selectedSlang ? (
+              <p className="hint-text">
+                Click ▶ to explore meaning and usage
+              </p>
+            ) : (
+              <>
+                <h4>{selectedSlang.phrase}</h4>
 
+                <p><strong>Meaning:</strong> {selectedSlang.meaning}</p>
+                <p><strong>When to use:</strong> {selectedSlang.situation}</p>
+                <div className="d-flex gap-2 mb-2">
+                  <span className="badge bg-secondary">
+                    {selectedSlang.formality}
+                  </span>
+                  <span className="badge bg-info text-dark">
+                    {selectedSlang.tone}
+                  </span>
+                </div>
+                <p><strong>Timestamp:</strong> {selectedSlang.timestamp}</p>
+                <h6>Try responding:</h6>
+                <ul>
+                  {selectedSlang.responses.map((r, i) => (
+                    <li key={i}>{r}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
