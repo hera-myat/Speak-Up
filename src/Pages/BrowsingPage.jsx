@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import logo from "../components/Speakup.png";
 
 import blackPanther from "../assets/trending-movies/black-panther.jpeg";
 import jaws from "../assets/trending-movies/jaws.jpeg";
@@ -43,55 +44,55 @@ export default function BrowsingPage() {
   const navigate = useNavigate();
 
   const trendingMovies = [
-  { src: blackPanther, genre: "action", level: "intermediate", context: "formal", title: "Black Panther" },
-  { src: jaws, genre: "horror", level: "intermediate", context: "casual", title: "Jaws" },
-  { src: meBeforeYou, genre: "romance", level: "beginner", context: "casual", title: "Me Before You" },
-  { src: theNotebook, genre: "romance", level: "intermediate", context: "formal", title: "The Notebook" },
-  { src: avatar, genre: "sci-fi", level: "advanced", context: "formal", title: "Avatar" },
-  { src: backrooms, genre: "horror", level: "advanced", context: "slang", title: "Backrooms" },
-  { src: fall, genre: "thriller", level: "intermediate", context: "formal", title: "Fall" },
-  { src: jumanji, genre: "comedy", level: "beginner", context: "casual", title: "Jumanji" },
-  { src: regretting, genre: "romance", level: "beginner", context: "casual", title: "Regretting" },
-  { src: zootopia, genre: "comedy", level: "beginner", context: "casual", title: "Zootopia" },
+    { src: blackPanther, genre: "action", level: "intermediate", context: "formal", title: "Black Panther" },
+    { src: jaws, genre: "horror", level: "intermediate", context: "casual", title: "Jaws" },
+    { src: meBeforeYou, genre: "romance", level: "beginner", context: "casual", title: "Me Before You" },
+    { src: theNotebook, genre: "romance", level: "intermediate", context: "formal", title: "The Notebook" },
+    { src: avatar, genre: "sci-fi", level: "advanced", context: "formal", title: "Avatar" },
+    { src: backrooms, genre: "horror", level: "advanced", context: "slang", title: "Backrooms" },
+    { src: fall, genre: "thriller", level: "intermediate", context: "formal", title: "Fall" },
+    { src: jumanji, genre: "comedy", level: "beginner", context: "casual", title: "Jumanji" },
+    { src: regretting, genre: "romance", level: "beginner", context: "casual", title: "Regretting" },
+    { src: zootopia, genre: "comedy", level: "beginner", context: "casual", title: "Zootopia" },
   ];
 
   const trendingShows = [
-  { src: bridgerton, genre: "romance", level: "intermediate", context: "formal", title: "Bridgerton" },
-  { src: theOffice, genre: "comedy", level: "beginner", context: "casual", title: "The Office" },
-  { src: you, genre: "thriller", level: "advanced", context: "slang", title: "You" },
-  { src: strangerThings, genre: "sci-fi", level: "intermediate", context: "casual", title: "Stranger Things" },
-  { src: arcane, genre: "fantasy", level: "advanced", context: "formal", title: "Arcane" },
-  { src: emily, genre: "comedy", level: "beginner", context: "formal", title: "Emily in Paris" },
-  { src: squid, genre: "thriller", level: "intermediate", context: "casual", title: "Squid Game" },
-  { src: wednesday, genre: "horror", level: "intermediate", context: "formal", title: "Wednesday" },
-  { src: boots, genre: "comedy", level: "beginner", context: "slang", title: "Boots" },
-  { src: bad, genre: "horror", level: "advanced", context: "casual", title: "Breaking Bad" },
+    { src: bridgerton, genre: "romance", level: "intermediate", context: "formal", title: "Bridgerton" },
+    { src: theOffice, genre: "comedy", level: "beginner", context: "casual", title: "The Office" },
+    { src: you, genre: "thriller", level: "advanced", context: "slang", title: "You" },
+    { src: strangerThings, genre: "sci-fi", level: "intermediate", context: "casual", title: "Stranger Things" },
+    { src: arcane, genre: "fantasy", level: "advanced", context: "formal", title: "Arcane" },
+    { src: emily, genre: "comedy", level: "beginner", context: "formal", title: "Emily in Paris" },
+    { src: squid, genre: "thriller", level: "intermediate", context: "casual", title: "Squid Game" },
+    { src: wednesday, genre: "horror", level: "intermediate", context: "formal", title: "Wednesday" },
+    { src: boots, genre: "comedy", level: "beginner", context: "slang", title: "Boots" },
+    { src: bad, genre: "horror", level: "advanced", context: "casual", title: "Breaking Bad" },
   ];
 
   const mustWatch = [
-  { src: bad, genre: "horror", level: "advanced", context: "casual", title: "Breaking Bad" },
-  { src: arcane, genre: "fantasy", level: "advanced", context: "formal", title: "Arcane" },
-  { src: emily, genre: "comedy", level: "beginner", context: "formal", title: "Emily in Paris" },
-  { src: wednesday, genre: "horror", level: "intermediate", context: "formal", title: "Wednesday" },
-  { src: theNotebook, genre: "romance", level: "intermediate", context: "formal", title: "The Notebook" },
-  { src: squid, genre: "thriller", level: "intermediate", context: "casual", title: "Squid Game" },
-  { src: jumanji, genre: "comedy", level: "beginner", context: "casual", title: "Jumanji" },
-  { src: fall, genre: "thriller", level: "intermediate", context: "formal", title: "Fall" },
-  { src: blackPanther, genre: "action", level: "intermediate", context: "formal", title: "Black Panther" },
-  { src: strangerThings, genre: "sci-fi", level: "advanced", context: "casual", title: "Stranger Things" },
+    { src: bad, genre: "horror", level: "advanced", context: "casual", title: "Breaking Bad" },
+    { src: arcane, genre: "fantasy", level: "advanced", context: "formal", title: "Arcane" },
+    { src: emily, genre: "comedy", level: "beginner", context: "formal", title: "Emily in Paris" },
+    { src: wednesday, genre: "horror", level: "intermediate", context: "formal", title: "Wednesday" },
+    { src: theNotebook, genre: "romance", level: "intermediate", context: "formal", title: "The Notebook" },
+    { src: squid, genre: "thriller", level: "intermediate", context: "casual", title: "Squid Game" },
+    { src: jumanji, genre: "comedy", level: "beginner", context: "casual", title: "Jumanji" },
+    { src: fall, genre: "thriller", level: "intermediate", context: "formal", title: "Fall" },
+    { src: blackPanther, genre: "action", level: "intermediate", context: "formal", title: "Black Panther" },
+    { src: strangerThings, genre: "sci-fi", level: "advanced", context: "casual", title: "Stranger Things" },
   ];
 
   const beginnersChoices = [
-  { src: barbie, genre: "comedy", level: "beginner", context: "casual", title: "Barbie" },
-  { src: meangirls, genre: "comedy", level: "beginner", context: "casual", title: "Mean Girls" },
-  { src: friends, genre: "comedy", level: "beginner", context: "casual", title: "Friends" },
-  { src: prada, genre: "comedy", level: "beginner", context: "formal", title: "The Devil Wears Prada" },
-  { src: titanic, genre: "romance", level: "beginner", context: "formal", title: "Titanic" },
-  { src: castaway, genre: "drama", level: "beginner", context: "formal", title: "Cast Away" },
-  { src: bean, genre: "comedy", level: "beginner", context: "casual", title: "Mr. Bean" },
-  { src: fallguy, genre: "action", level: "beginner", context: "casual", title: "Fall Guy" },
-  { src: gump, genre: "drama", level: "beginner", context: "formal", title: "Forrest Gump" },
-  { src: nemo, genre: "family", level: "beginner", context: "casual", title: "Finding Nemo" },
+    { src: barbie, genre: "comedy", level: "beginner", context: "casual", title: "Barbie" },
+    { src: meangirls, genre: "comedy", level: "beginner", context: "casual", title: "Mean Girls" },
+    { src: friends, genre: "comedy", level: "beginner", context: "casual", title: "Friends" },
+    { src: prada, genre: "comedy", level: "beginner", context: "formal", title: "The Devil Wears Prada" },
+    { src: titanic, genre: "romance", level: "beginner", context: "formal", title: "Titanic" },
+    { src: castaway, genre: "drama", level: "beginner", context: "formal", title: "Cast Away" },
+    { src: bean, genre: "comedy", level: "beginner", context: "casual", title: "Mr. Bean" },
+    { src: fallguy, genre: "action", level: "beginner", context: "casual", title: "Fall Guy" },
+    { src: gump, genre: "drama", level: "beginner", context: "formal", title: "Forrest Gump" },
+    { src: nemo, genre: "family", level: "beginner", context: "casual", title: "Finding Nemo" },
   ];
 
   const filteredMovies = trendingMovies.filter(
@@ -116,12 +117,26 @@ export default function BrowsingPage() {
 
       <div className="top-bar">
         <div className="location-pill">
+          <button
+            className="home_btn"
+            onClick={() => navigate(-1)}
+          >
+            Home
+          </button>
           <span className="flag">🇺🇸</span>
           <span className="text">United States</span>
           <span className="dot">•</span>
           <span className="text">English</span>
+          
         </div>
-
+        <img
+          src={logo}
+          alt="SpeakUp logo"
+          className="logo"
+          style={{ width: "200px", marginTop: "2px", marginBottom: "2px", cursor: "pointer"}}
+          onClick={() => navigate(-1)}
+        />
+        
         <div className="search-container">
           <span className="search-icon">🔍</span>
           <input

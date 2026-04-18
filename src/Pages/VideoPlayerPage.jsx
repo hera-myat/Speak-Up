@@ -10,10 +10,10 @@ const movies = [
         title: "Learn Commonly Used Slang",
         video: jawsTrailer,
         slang: [
-            { quote: "You good? 🔥", timestamp: 3 },
+            { quote: <>"You good? "<span className="flame">🔥</span></>, timestamp: 3 },
             { quote: "You’re hilarious", timestamp: 8 },
             { quote: "I can’t with you", timestamp: 14 },
-            { quote: "No way! 🔥", timestamp: 20 },
+            { quote: <>"No way! "<span className="flame">🔥</span></>, timestamp: 20 },
             { quote: "That’s wild", timestamp: 27 },
         ],
     },
@@ -21,11 +21,11 @@ const movies = [
         title: "Learn Commonly Used Phrases",
         video: jawsTrailer,
         slang: [
-            { quote: "Nice to meet you 🔥", timestamp: 3 },
+            { quote: <>"Nice to meet you "<span className="flame">🔥</span></>, timestamp: 3 },
             { quote: "Where are you from?", timestamp: 8 },
             { quote: "What do you do?", timestamp: 14 },
             { quote: "That’s cool", timestamp: 20 },
-            { quote: "We should hang out sometime 🔥", timestamp: 27 },
+            { quote: <>"We should hang out sometime 🔥"<span className="flame">🔥</span></>, timestamp: 27 },
         ],
     },
 ];
@@ -61,51 +61,64 @@ export default function VideoPlayerPage() {
                 minHeight: "100vh",
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "center",
+
             }}
         >
-            <button
-                className="btn btn-outline-light mb-3"
-                onClick={() => navigate(-1)}
-            >
-                ← Back
-            </button>
-
-            <h1 className="text-white mb-4">{movie.title}</h1>
-            <video
-                ref={videoRef}
-                width="100%"
-                height="auto"
-                controls
-                autoPlay
-                style={{ maxWidth: "75%", backgroundColor: "#000" }}
-                onError={() => console.error("Video failed to load")}
-            >
-                <source src={movie.video} type="video/mp4" />
-            </video>
-
-            <div
-                style={{
-                    marginTop: "20px",
-                    width: "75%",
-                    backgroundColor: "#111",
-                    padding: "20px",
-                    borderRadius: "10px",
-                    color: "white",
-                }}
-            >
-                <h4>Slang List</h4>
-
-                {movie.slang.map((item, index) => (
-                    <button
-                        key={index}
-                        className="btn btn-outline-light w-100 mb-2 text-start"
-                        onClick={() => jumpToTime(item.timestamp)}
-                    >
-                        {item.quote} ({formatTime(item.timestamp)})
-                    </button>
-                ))}
+            <div className="back-button-container" 
+            style={{ 
+                alignItems: "left",
+                padding: "20px" }}>
+                <button
+                    className="about_btn"
+                    onClick={() => navigate(-1)}
+                >
+                    ← Back
+                </button>
             </div>
+
+            <div className="video-player" style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center" 
+            }}>
+                <h1 className="text-white mb-4">{movie.title}</h1>
+                <video
+                    ref={videoRef}
+                    width="100%"
+                    height="auto"
+                    controls
+                    autoPlay
+                    style={{ maxWidth: "75%", backgroundColor: "#000" }}
+                    onError={() => console.error("Video failed to load")}
+                >
+                    <source src={movie.video} type="video/mp4" />
+                </video>
+
+                <div
+                    style={{
+                        marginTop: "20px",
+                        width: "75%",
+                        backgroundColor: "#111",
+                        padding: "20px",
+                        borderRadius: "10px",
+                        color: "white",
+                    }}
+                >
+                    <h4>Slang List</h4>
+
+                    {movie.slang.map((item, index) => (
+                        <button
+                            key={index}
+                            className="btn btn-outline-light w-100 mb-2 text-start"
+                            onClick={() => jumpToTime(item.timestamp)}
+                        >
+                            {item.quote} ({formatTime(item.timestamp)})
+                        </button>
+                    ))}
+                </div>
+
+            </div>
+
         </div>
     );
 }

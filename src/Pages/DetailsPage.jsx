@@ -155,14 +155,14 @@ export default function DetailsPage() {
   return (
     <div className="details-container container mt-4">
       <button
-        className="btn btn-outline-light mb-3"
+        className="about_btn"
         onClick={() => navigate(-1)}
       >
         ← Back
       </button>
 
       <div className="row align-items-center mb-4">
-        <div className="col-md-4 text-center">
+        <div className="col-md-4 text-center p-3">
           <img
             src={movie.src}
             alt={movie.title}
